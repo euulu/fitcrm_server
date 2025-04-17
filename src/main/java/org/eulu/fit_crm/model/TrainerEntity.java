@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "trainers")
-public class Trainer {
+public class TrainerEntity {
     @Id
     private Long id;
     @Column(nullable = false)
