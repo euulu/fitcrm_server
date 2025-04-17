@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/trainers")
 @RequiredArgsConstructor
@@ -17,8 +19,8 @@ public class TrainerController {
     private final TrainerService trainerService;
 
     @GetMapping
-    public ResponseEntity<Page<TrainerDto>> getAllTrainers(Pageable pageable) {
-        Page<TrainerDto> trainers = trainerService.findAll(pageable);
+    public ResponseEntity<List<TrainerDto>> getAllTrainers() {
+        List<TrainerDto> trainers = trainerService.findAll();
         return ResponseEntity.ok(trainers);
     }
 }
